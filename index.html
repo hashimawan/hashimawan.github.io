@@ -17,14 +17,14 @@
   window.pagesense = window.pagesense || [];
 
   // Button A click event
-  document.getElementById('buttonA').addEventListener('click', function() {
+  // document.getElementById('buttonA').addEventListener('click', function() {
     if (typeof window.pagesense !== 'undefined' && window.pagesense) {
       window.pagesense.push(['trackEvent', 'Button_Clicked', {
         'button': 'A',
         'page': window.location.pathname
       }]);
     }
-  });
+  // });
 
   // Button B click event
   document.getElementById('buttonB').addEventListener('click', function() {
