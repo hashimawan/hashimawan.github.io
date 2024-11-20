@@ -11,6 +11,7 @@
 <body>
     <button id="buttonA">Button A</button>
     <button id="buttonB">Button B</button>
+    <button id="buttonC">Button C</button>
     <script>
         
   // Initialize the pagesense array if it doesn't exist
@@ -34,6 +35,17 @@
       }]);
     }
   });
+
+
+document.getElementById('buttonC').addEventListener('click', function() {
+    if (typeof window.pagesense !== 'undefined' && window.pagesense) {
+      window.pagesense.push(['trackEvent', 'ButtonC_Clicked', {
+        'button': 'C',
+        'page': window.location.pathname
+      }]);
+    }
+  });
+        
 </script>
 </body>
 </html>
