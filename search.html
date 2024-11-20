@@ -19,6 +19,14 @@
 
   <!-- Zoho Tracking Script -->
   <script>
+
+    if (window.pagesense) {
+        window.pagesense.push(['trackEvent', 'Total_Search', {
+          'button': 'SuggestionSearch',
+          'page': window.location.pathname
+        }]);
+    }
+    
     // Track "Search A" button click
     document.getElementById('searchA').addEventListener('click', function () {
       if (window.pagesense) {
