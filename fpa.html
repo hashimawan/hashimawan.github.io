@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FPA Page</title>
+</head>
+<body>
+  <!-- FPA Page -->
+  <div id="fpa-page">
+    <h1>FPA Page</h1>
+    <button id="callButton">Call</button>
+  </div>
+
+  <!-- Zoho Tracking Script -->
+  <script>
+    // Track when the user lands on the FPA page
+    if (window.pagesense) {
+      window.pagesense.push(['trackEvent', 'FPA_Page_Landed', {
+        'page': window.location.pathname
+      }]);
+    }
+
+    // Track "Call" button click
+    document.getElementById('callButton').addEventListener('click', function () {
+      if (window.pagesense) {
+        window.pagesense.push(['trackEvent', 'Call_Clicked', {
+          'page': window.location.pathname
+        }]);
+      }
+      // Proceed with the call action
+      alert('Lead generated!');
+    });
+  </script>
+</body>
+</html>
