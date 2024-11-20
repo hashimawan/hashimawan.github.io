@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoho A/B Testing Example</title>
+</head>
+<body>
+  <!-- Search Page -->
+  <div id="search-page">
+    <h1>Search Page</h1>
+    <!-- Search A Button (Variant A) -->
+    <button id="searchA" onclick="window.location.href='fpa.html'">Search A</button>
+    <!-- Search B Button (Variant B) -->
+    <button id="searchB" onclick="window.location.href='fpa.html'">Search B</button>
+  </div>
+
+  <!-- Zoho Tracking Script -->
+  <script>
+    // Track "Search A" button click
+    document.getElementById('searchA').addEventListener('click', function () {
+      if (window.pagesense) {
+        window.pagesense.push(['trackEvent', 'SearchA_Clicked', {
+          'button': 'A',
+          'page': window.location.pathname
+        }]);
+      }
+    });
+
+    // Track "Search B" button click
+    document.getElementById('searchB').addEventListener('click', function () {
+      if (window.pagesense) {
+        window.pagesense.push(['trackEvent', 'SearchB_Clicked', {
+          'button': 'B',
+          'page': window.location.pathname
+        }]);
+      }
+    });
+  </script>
+</body>
+</html>
