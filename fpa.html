@@ -18,7 +18,7 @@
   <script>
     // Track when the user lands on the FPA page
     if (window.pagesense) {
-      window.pagesense.push(['trackEvent', 'FPA_Page', {
+      window.pagesense.push(['trackEvent', 'FPA_Page1', {
         'page': window.location.pathname
       }]);
     }
@@ -26,7 +26,7 @@
     // Track "Call" button click
     document.getElementById('callButton').addEventListener('click', function () {
       if (window.pagesense) {
-        window.pagesense.push(['trackEvent', 'Lead_Generated', {
+        window.pagesense.push(['trackEvent', 'Lead_Generated1', {
           'page': window.location.pathname
         }]);
       }
