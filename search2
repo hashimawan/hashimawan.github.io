@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoho A/B Testing Example</title>
+  
+  <script src="https://cdn.pagesense.io/js/9yz28pcl/e2df7a301b8148e5a3cf1f14c7851b86.js"></script>
+</head>
+<body>
+  <!-- Search Page -->
+  <div id="search-page">
+    <h1>Search Page</h1>
+    <!-- Search A Button (Variant A) -->
+    <button id="searchA" onclick="window.location.href='fpa.html'">Suggestion Search 1</button>
+    <!-- Search B Button (Variant B) -->
+    <button id="searchB" onclick="window.location.href='fpa.html'">Normal Search 1</button>
+  </div>
+
+  <!-- Zoho Tracking Script -->
+  <script>
+
+    function TriggerSearchSuggestionEnabledEvent() {
+       if (window.pagesense) {
+         alert("SearchSuggestionEnabledEvent")'
+       }
+    }
+
+    function TriggerSearchSuggestionDisabledEvent() {
+       if (window.pagesense) {
+         alert("SearchSuggestionDisabledEvent")'
+       }
+    }
+
+    if (window.pagesense) {
+        window.pagesense.push(['trackEvent', 'Total_Search1', {
+          'button': 'SuggestionSearch',
+          'page': window.location.pathname
+        }]);
+    }
+    
+    // Track "Search A" button click
+    document.getElementById('searchA').addEventListener('click', function () {
+      if (window.pagesense) {
+        window.pagesense.push(['trackEvent', 'Suggestion_Search1', {
+          'button': 'SuggestionSearch',
+          'page': window.location.pathname
+        }]);
+      }
+    });
+
+    // Track "Search B" button click
+    document.getElementById('searchB').addEventListener('click', function () {
+      if (window.pagesense) {
+        window.pagesense.push(['trackEvent', 'Normal_Search1', {
+          'button': 'NormalSearch',
+          'page': window.location.pathname
+        }]);
+      }
+    });
+  </script>
+</body>
+</html>
