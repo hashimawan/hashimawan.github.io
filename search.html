@@ -20,6 +20,18 @@
   <!-- Zoho Tracking Script -->
   <script>
 
+    function TriggerSearchSuggestionEnabledEvent() {
+       if (window.pagesense) {
+         alert("SearchSuggestionEnabledEvent")'
+       }
+    }
+
+    function TriggerSearchSuggestionDisabledEvent() {
+       if (window.pagesense) {
+         alert("SearchSuggestionDisabledEvent")'
+       }
+    }
+
     if (window.pagesense) {
         window.pagesense.push(['trackEvent', 'Total_Search1', {
           'button': 'SuggestionSearch',
